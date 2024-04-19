@@ -14,7 +14,21 @@ export default {
 				montserrat: ["Montserrat Variable", ...defaultTheme.fontFamily.sans],
 				onest: ["Onest Variable", ...defaultTheme.fontFamily.sans],
 			},
+			animation:{
+				"background-shine": "background-shine 4s linear infinite"
+			},
+			keyframes:{
+				"background-shine": {
+					"from": {
+					  "backgroundPosition": "0 0"
+					},
+					"to": {
+					  "backgroundPosition": "-200% 0"
+					}
+				  }
+			}
 		},
 	},
 	plugins: [],
+	
 }

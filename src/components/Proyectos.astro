@@ -4,39 +4,54 @@ import NextJS from "../icons/NextJS.astro";
 import Tailwind from "../icons/Tailwind.astro";
 import Link from "../icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
-import Maleta from "../icons/Maleta.astro";
+import ReactIcon from "../icons/ReactIcon.astro";
 import Code from "../icons/Code.astro";
 import CardSpotlight from "./Card";
+import AstroIcon from "../icons/AstroIcon.astro";
+import Supabase from "../icons/Supabase.astro";
+import ShineBadge from "./ShineBadge.astro";
+import AnimatedButton from "./AnimatedButton";
 
 const TAGS = {
     NEXT: {
         name: "Next.js",
         class: "bg-black text-white",
+        color: "#000",
         icon: NextJS,
     },
     TAILWIND: {
         name: "Tailwind CSS",
         class: "bg-[#003159] text-white",
+        color: "#003159",
         icon: Tailwind,
+    },
+    ASTRO: {
+        name: "Astro",
+        class: "bg-[#0f0f0f] text-white",
+        color: "#0f0f0f",
+        icon: AstroIcon,
+    },
+    REACT: {
+        name: "React",
+        class: "bg-[#316979] text-white",
+        color: "#316979",
+        icon: ReactIcon,
+    },
+    SUPABASE: {
+        name: "Supabase",
+        class: "bg-[#298A5E] text-white",
+        color: "#298A5E",
+        icon: Supabase,
     },
 };
 const PROJECTS = [
-    {
-        title: "ChapterChat - Comunidad de lectura en tiempo real",
-        description:
-            "Busca, ofrece y comparte libros con otros lectores. Chatea en tiempo real con otros amantes de la lectura.",
-        link: "https://chapterchat-eight.vercel.app/",
-        github: "https://github.com/pheralb/svgl",
-        image: "/proyectos/ChapterChat.webp",
-        tags: [TAGS.NEXT, TAGS.TAILWIND],
-    },
     {
         title: "Ikerlan Esports - Torneo de League of Legends",
         description:
             "Apuntate, forma equipo y compite en el torneo de League of Legends organizado por Ikerlan Esports. Podras ver los resultados y participar en el pick'em.",
         link: "https://ikerlan-esports.eus",
         image: "/proyectos/ikerlan.webp",
-        tags: [TAGS.NEXT, TAGS.TAILWIND],
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.REACT, TAGS.SUPABASE],
     },
     {
         title: "MediaFetch - Descarga contenido multimedia",
@@ -44,7 +59,17 @@ const PROJECTS = [
             "Pega el link de tu contenido multimedia favorito y descargalo en el formato que prefieras. De momento solo soporta YouTube.",
         link: "https://media-fetch.vercel.app/youtube",
         image: "/proyectos/MediaFetch.webp",
-        tags: [TAGS.NEXT, TAGS.TAILWIND],
+        github: "https://github.com/MiKeLFernandeZz/MediaFetch",
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.REACT],
+    },
+    {
+        title: "ChapterChat - Comunidad de lectura en tiempo real",
+        description:
+            "Busca, ofrece y comparte libros con otros lectores. Chatea en tiempo real con otros amantes de la lectura.",
+        link: "https://chapterchat-eight.vercel.app/",
+        // github: "https://github.com/pheralb/svgl",
+        image: "/proyectos/ChapterChat.webp",
+        tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.SUPABASE],
     },
 ];
 ---
@@ -78,15 +103,10 @@ const PROJECTS = [
                                     {title}
                                 </h3>
                                 <div class="flex flex-wrap mt-2">
-                                    <ul class="flex flex-row mb-2 gap-x-2">
+                                    <ul class="flex flex-row flex-wrap mb-2 gap-2">
                                         {tags.map((tag) => (
                                             <li>
-                                                <span
-                                                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                                                >
-                                                    <tag.icon class="size-4" />
-                                                    {tag.name}
-                                                </span>
+                                                <ShineBadge icon={tag} />
                                             </li>
                                         ))}
                                     </ul>
@@ -96,16 +116,22 @@ const PROJECTS = [
                                     </div>
                                     <footer class="flex items-end justify-start mt-4 gap-x-4">
                                         {github && (
-                                            <LinkButton href={github}>
-                                                <GitHub class="size-6" />
-                                                Code
-                                            </LinkButton>
+                                            // <LinkButton href={github}>
+                                            //     <GitHub class="size-6" />
+                                            //     Code
+                                            // </LinkButton>
+                                            <AnimatedButton client:load href={github}>
+                                                Código
+                                            </AnimatedButton>
                                         )}
                                         {link && (
-                                            <LinkButton href={link}>
-                                                <Link class="size-4" />
+                                            // <LinkButton href={link}>
+                                            //     <Link class="size-4" />
+                                            //     Preview
+                                            // </LinkButton>
+                                            <AnimatedButton client:load href={link}>
                                                 Preview
-                                            </LinkButton>
+                                            </AnimatedButton>
                                         )}
                                     </footer>
                                 </div>
