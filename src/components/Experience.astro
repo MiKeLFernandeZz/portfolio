@@ -1,0 +1,30 @@
+---
+import Maleta from "../icons/Maleta.astro"
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Actualmente...",
+    title: "MLOps and Data Engineer",
+    company: "Ikerlan",
+    description:
+      "Realizando el Trabajo de Fin de Grado en Ikerlan, en el departamento de Data Science e Inteligencia Artificial. Desarrollo de una plataforma para el entrenamiento de modelos de Machine Learning paralelizados.",
+    // link: "https://twitch.tv/midudev",
+  }
+]
+---
+
+<section class="lg:max-w-4xl md:max-w-2xl mx-6 md:mx-auto py-24 flex flex-col gap-5">
+    <div class="flex gap-3 items-center mb-6">
+        <Maleta/>
+        <h2 class="text-white text-3xl font-semibold font-onest">Experiencia Laboral</h2>
+    </div>
+    <ol class="relative mt-16">
+        {
+          EXPERIENCIE.map((experiencie) => (
+            <li class="">
+              <ExperienceItem {...experiencie} />
+            </li>
+          ))
+        }
+      </ol>
+</section>

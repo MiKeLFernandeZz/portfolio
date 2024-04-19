@@ -1,14 +1,39 @@
 ---
-
+import Email from "../icons/Email.astro";
+import Badge from "./Badge.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
 ---
 
-<section class="container mx-auto py-24 flex flex-col gap-3 px-6">
-  <img
-    src="/mikel.webp"
-    alt="Foto de perfil de Mikel Fernandez de Labastida"
-    srcset=""
-    class="size-20 rounded-full"
-  />
-  <h1 class="text-4xl font-bold tracking-tight font-onest">¡Hola!, soy Mikel</h1>
-  <h2 class="font-montserrat font-medium text-white/80 text-xl text-pretty [&>strong]:text-secondary-100"><strong>Ingeniero informático, DevOps y MLOps engineering</strong> de Vitoria, Álava, España. Especializado en despliegues, automatización y front-end.</h2>
+<section class="lg:max-w-4xl md:max-w-2xl md:mx-auto py-24 flex flex-col gap-5 mx-6">
+  <div class="flex flex-col gap-4 max-w-xl">
+    <img
+      src="/mikel.webp"
+      alt="Foto de perfil de Mikel Fernandez de Labastida"
+      srcset=""
+      class="size-20 rounded-full"
+    />
+    <h1 class="text-5xl font-bold tracking-tight font-onest mb-4">
+      Hey!, soy Mikel
+    </h1>
+    <p
+      class="font-montserrat font-medium text-white/80 text-xl text-pretty [&>strong]:text-secondary-100"
+    >
+      <strong>Ingeniero informático, DevOps y MLOps engineering</strong> de Vitoria,
+      Álava, España. Especializado en Kubernetes, Docker y front-end.
+    </p>
+  </div>
+  <div class="flex gap-5">
+    <Badge>
+      <div class="flex gap-2 justify-center items-center">
+        <Email />
+        <p>Contáctame</p>
+      </div>
+    </Badge>
+    <Badge>
+      <div class="flex gap-2 justify-center items-center">
+        <LinkedIn />
+        <p>LinkedIn</p>
+      </div>
+    </Badge>
+  </div>
 </section>
