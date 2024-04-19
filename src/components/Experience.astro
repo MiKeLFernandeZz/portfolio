@@ -1,9 +1,10 @@
 ---
 import Maleta from "../icons/Maleta.astro"
 import ExperienceItem from "./ExperienceItem.astro"
+import TextGradient from "./TextGradient.astro"
 const EXPERIENCIE = [
   {
-    date: "Actualmente...",
+    date: "Octubre 2021 - Actualidad",
     title: "MLOps and Data Engineer",
     company: "Ikerlan",
     description:
@@ -13,12 +14,12 @@ const EXPERIENCIE = [
 ]
 ---
 
-<section class="lg:max-w-4xl md:max-w-2xl mx-6 md:mx-auto py-24 flex flex-col gap-5">
-    <div class="flex gap-3 items-center mb-6">
+<section class="lg:max-w-4xl md:max-w-2xl mx-6 md:mx-auto py-24 flex flex-col gap-16">
+    <div class="flex gap-3 items-center">
         <Maleta/>
-        <h2 class="text-white text-3xl font-semibold font-onest">Experiencia Laboral</h2>
+        <h2 class="text-3xl text-white font-semibold font-onest">Experiencia Laboral</h2>
     </div>
-    <ol class="relative mt-16">
+    <ol class="relative">
         {
           EXPERIENCIE.map((experiencie) => (
             <li class="">
