@@ -115,22 +115,22 @@ const PROJECTS = [
                                         {description}
                                     </div>
                                     <footer class="flex items-end justify-start mt-4 gap-x-4">
-                                        {github && (
-                                            // <LinkButton href={github}>
-                                            //     <GitHub class="size-6" />
-                                            //     Code
-                                            // </LinkButton>
-                                            <AnimatedButton client:load href={github}>
-                                                Código
-                                            </AnimatedButton>
-                                        )}
                                         {link && (
                                             // <LinkButton href={link}>
                                             //     <Link class="size-4" />
                                             //     Preview
                                             // </LinkButton>
-                                            <AnimatedButton client:load href={link}>
+                                            <AnimatedButton client:load href={link} func={"github"}>
                                                 Preview
+                                            </AnimatedButton>
+                                        )}
+                                        {github && (
+                                            // <LinkButton href={github}>
+                                            //     <GitHub class="size-6" />
+                                            //     Code
+                                            // </LinkButton>
+                                            <AnimatedButton client:load href={github} func={"code"}>
+                                                Código
                                             </AnimatedButton>
                                         )}
                                     </footer>
