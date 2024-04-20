@@ -1,0 +1,33 @@
+---
+const { images } = Astro.props;
+---
+
+<section id="image-carousel" class="splide" aria-label="Beautiful Images">
+  <div class="splide__track">
+    <ul class="splide__list">
+      {
+        images.map((image: string) => (
+          <li class="splide__slide">
+            <img
+              src={image}
+              alt=""
+              loading="lazy"
+              class="aspect-[1.75] object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-105 md:group-hover:scale-100"
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<script>
+  import "@splidejs/splide/css";
+  import Splide from "@splidejs/splide";
+
+  new Splide(".splide", {
+    // type: "",
+    gap: "2vw",
+    focus: "center",
+  }).mount();
+</script>
