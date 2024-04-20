@@ -3,12 +3,13 @@ import NextJS from "../icons/NextJS.astro";
 import Tailwind from "../icons/Tailwind.astro";
 import ReactIcon from "../icons/ReactIcon.astro";
 import Code from "../icons/Code.astro";
-import CardSpotlight from "./Card";
+import CardSpotlight from "./MyCard";
 import AstroIcon from "../icons/AstroIcon.astro";
 import Supabase from "../icons/Supabase.astro";
 import ShineBadge from "./ShineBadge.astro";
 import AnimatedButton from "./AnimatedButton";
-import Slider from "./Slider.astro";
+// import Slider from "./Slider";
+import { MySlider } from "./MySlider";
 
 const TAGS = {
     NEXT: {
@@ -92,11 +93,11 @@ const PROJECTS = [
         {
             PROJECTS.map(
                 ({ images, title, description, tags, link, github }) => (
-                    <CardSpotlight client:load>
+                    <CardSpotlight client:idle>
                         <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
                             <div class="w-full md:w-1/2">
-                                <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-                                    <Slider images={images}/>
+                                <div class="relative h-56 flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                                    <MySlider images={images} client:load/>
                                 </div>
                             </div>
                             <div class="w-full md:w-1/2 md:max-w-lg">
