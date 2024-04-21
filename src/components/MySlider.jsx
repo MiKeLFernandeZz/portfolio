@@ -35,9 +35,9 @@ import { Carousel } from 'react-responsive-carousel';
 
 export function MySlider({ images }){
     return (
-        <Carousel emulateTouch={true} showStatus={false} showIndicators={false}>
+        <Carousel emulateTouch={true} showStatus={false} showIndicators={false} animationHandler={"fade"}>
             {images.map((image, index) => (
-                <div key={index}>
+                <div key={index} className="w-full ">
                     <img src={image} alt="" className="aspect-[1.75] object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-105 md:group-hover:scale-100"/>
                 </div>
             ))}
