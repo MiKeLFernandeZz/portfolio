@@ -1,0 +1,36 @@
+<h2 {...Astro.props}>
+    <slot/>
+</h2>
+
+<style>
+    h2{
+        display: block;
+        position: relative;
+        padding: 0.2em 0;
+        transition: transform 300ms ease-in-out;
+    }
+
+    h2::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.1em;
+        background-color: #5bc0be;
+        /* opacity: 0; */
+        transition: opacity 300ms, transform 300ms;
+        opacity: 1;
+        transform: scale(0);
+        transform-origin: center;
+    }
+
+    h2:hover::after, h2:focus::after{
+        transform: scale(1);
+    }
+
+    h2:hover{
+        transform: translateY(-4px);
+    }
+
+</style>

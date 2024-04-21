@@ -2,6 +2,7 @@
 import Maleta from "../icons/Maleta.astro"
 import ExperienceItem from "./ExperienceItem.astro"
 import TextGradient from "./TextGradient.astro"
+import UnderlineText from "./UnderlineText.astro"
 const EXPERIENCIE = [
   {
     date: "Octubre 2021 - Actualidad",
@@ -16,8 +17,8 @@ const EXPERIENCIE = [
 
 <section class="lg:max-w-4xl md:max-w-2xl mx-6 md:mx-auto py-24 flex flex-col gap-8">
     <div class="flex gap-3 items-center">
-        <Maleta/>
-        <h2 class="text-3xl text-white font-semibold font-onest">Experiencia Laboral</h2>
+        
+        <UnderlineText class="text-3xl text-white font-semibold font-onest"><Maleta class="inline"/> Experiencia Laboral</UnderlineText>
     </div>
     <ol class="relative">
         {

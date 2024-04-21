@@ -1,27 +1,43 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
-import Experience from '../components/Experience.astro';
-import Proyectos from '../components/Proyectos.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Title from "../components/Title.astro";
+import Experience from "../components/Experience.astro";
+import Proyectos from "../components/Proyectos.astro";
 ---
 
 <Layout title="Porfolio.">
-	<main class="relative w-full z-10 ">
-		<Title/>
-		<Experience/>
-		<Proyectos/>
-	</main>
+  <main class="relative w-full z-10">
+    <Title />
+    <Experience />
+    <Proyectos />
+  </main>
 </Layout>
 
 <style>
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-		color-scheme: light dark;
-	}
-	
-	:root{
-	}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color-scheme: light dark;
+  }
+
+  :root {
+  }
 </style>
+
+<script>
+  const inViewport = (entries: any[], observer: any) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle("is-inViewport", entry.isIntersecting);
+    });
+  };
+
+  const Obs = new IntersectionObserver(inViewport);
+  const obsOptions = {}; //See: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Intersection_observer_options
+
+  // Attach observer to every [data-inviewport] element:
+  document.querySelectorAll("[data-inviewport]").forEach((el) => {
+    // Obs.observe(el, obsOptions);
+	Obs.observe(el)
+  });
+</script>
