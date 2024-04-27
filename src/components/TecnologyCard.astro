@@ -1,0 +1,12 @@
+---
+const {tecnologia} = Astro.props;
+import CardSpotlight from "./MyCard";
+---
+
+<div class="w-28 h-28">
+    <CardSpotlight client:load>
+        <div class="w-20 h-20">
+            <tecnologia.img class:list={"size-16"} />
+        </div>
+    </CardSpotlight>
+</div>

@@ -42,7 +42,7 @@ const CardSpotlight = ({children}) => {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className='relative flex w-full items-center justify-center overflow-hidden rounded-xl border border-secondary-100/45 bg-gradient-to-r from-black to-gray-950 p-4 md:px-8 md:py-10 shadow-2xl'
+      className='relative flex w-full items-center justify-center overflow-hidden rounded-xl border border-neutral-800 bg-gradient-to-r from-black to-neutral-950 p-4 md:px-8 md:py-10 shadow-2xl'
     >
       <div
         className='pointer-events-none absolute -inset-px opacity-0 transition duration-300'

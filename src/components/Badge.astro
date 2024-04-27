@@ -1,8 +1,9 @@
 ---
 // const { text } = Astro.props;
+const { referencia } = Astro.props;
 ---
 
-<a href="https://www.linkedin.com/in/MikelFernandezDeLabastida" target="_blank" class="relative inline-block overflow-hidden rounded-full p-[1px] text-gray-50 hover:text-secondary-100">
+<a href={referencia} target="_blank" class="relative inline-block overflow-hidden rounded-full p-[1px] text-gray-50 hover:text-secondary-100">
     <span
         class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#363643_0%,#5bc0be_50%,#363643_100%)]"
     ></span>

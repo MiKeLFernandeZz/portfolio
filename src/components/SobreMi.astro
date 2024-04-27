@@ -1,0 +1,33 @@
+---
+import User from "../icons/User.astro";
+import UnderlineText from "./UnderlineText.astro";
+---
+
+<section
+  class="lg:max-w-4xl md:max-w-2xl mx-6 md:mx-auto py-16 pb-32 flex flex-col gap-8"
+>
+  <div class="flex gap-3 items-center">
+    <UnderlineText class="text-3xl text-white font-semibold font-onest"
+      ><User class="inline" /> Sobre Mi</UnderlineText
+    >
+  </div>
+  <div class="flex gap-12 justify-center items-center">
+    <div
+      class="flex flex-col gap-6 font-montserrat text-gray-300 [&_strong]:text-secondary-100 [&_p]:text-pretty"
+    >
+      <p>
+        Mi nombre es <strong>Mikel Fernandez de Labastida</strong>, cazafa para los amigos. Desde
+        pequeño noté curiosidad por la informática y eso hizo decantarme por
+        realizar un <strong>grado en Ingeniería Informática</strong> en Mondragon
+        Unibertsitatea.
+      </p>
+      <p>
+        Desde los 18 años he estado <strong
+          >realizando prácticas en alternancia al estudio en Ikerlan</strong
+        >, un centro tecnológico que aporta valor a empresas.
+      </p>
+      <p>En los proximos años realizare el máster en <strong>Análisis de Datos, Ciberseguridad y Computación en la Nube</strong> de Mondragon Unibertsitatea, al mismo tiempo que continuaré con mis prácticas en Ikerlan.</p>
+    </div>
+    <img src="/mikel-2.webp" alt="" srcset="" class="size-60 rounded-xl border-4 border-neutral-800">
+  </div>
+</section>
