@@ -1,38 +1,30 @@
 ---
 import AstroIcon from "../icons/AstroIcon.astro";
-import GitHub from "../icons/GitHub.astro";
+// import GitHub from "../icons/GitHub.astro";
 import JS from "../icons/JS.astro";
 import NextJS from "../icons/NextJS.astro";
 import ReactIcon from "../icons/ReactIcon.astro";
-import Supabase from "../icons/Supabase.astro";
+// import Supabase from "../icons/Supabase.astro";
+import HTML from "../icons/HTML.astro";
+import CSS from "../icons/CSS.astro";
 import Tailwind from "../icons/Tailwind.astro";
 import Tecnology from "../icons/Technology.astro";
-import TecnologyCard from "./TecnologyCard.astro";
+import { CardSpotlightBorder } from "./CardBorderSpotlight";
 import UnderlineText from "./UnderlineText.astro";
-const tecnologias = [
-  {
-    img: AstroIcon,
-  },
-  {
-    img: ReactIcon,
-  },
-  {
-    img: NextJS,
-  },
-  {
-    img: Tailwind,
-  },
-  {
-    img: Supabase,
-  },
-  {
-    img: JS,
-  },
-];
+import C from "../icons/C.astro";
+import Java from "../icons/Java.astro";
+import Bash from "../icons/Bash.astro";
+import Docker from "../icons/Docker.astro";
+import Kubernetes from "../icons/Kubernetes.astro";
+import Git from "../icons/Git.astro";
+import Linux from "../icons/Linux.astro";
+
+const tecnologias = [AstroIcon, ReactIcon, NextJS, Tailwind, HTML, CSS, JS];
+const tecnologias2 = [Java, C, Linux, Bash, Docker, Kubernetes, Git]
 ---
 
 <section
-  class="lg:max-w-4xl md:max-w-2xl mx-6 md:mx-auto py-16 flex flex-col gap-8"
+  class="lg:max-w-4xl md:max-w-2xl mx-6 md:mx-auto py-16 flex flex-col"
 >
   <div class="flex gap-3 items-center">
     <UnderlineText class="text-3xl text-white font-semibold font-onest"
@@ -40,29 +32,40 @@ const tecnologias = [
     >
   </div>
   <div class="logo-slider">
-    <div class="logos-slide">
-      {
-        tecnologias.map((tecnologia) => (
-          //<tecnologia.img class="size-8 inline-block mx-4" />
-          <div class="card inline-block mx-3">
-            <div class="inner">
-              <tecnologia.img class="size-8" />
-            </div>
-            <div class="blob" />
-            <div class="fakeblob" />
-          </div>
-        ))
-      }
-    </div>
+    {[...Array(3)].map((_, index) => (
+      <div class="logos-slide slide-one">
+        {
+          tecnologias.map((Tecnologia) => (
+            <CardSpotlightBorder client:load>
+              <Tecnologia class="size-8" />
+            </CardSpotlightBorder>
+          ))
+        }
+      </div>
+    ))}
+  </div>
+  <div class="logo-slider">
+    {[...Array(3)].map((_, index) => (
+      <div class="logos-slide slide-two">
+        {
+          tecnologias2.map((Tecnologia) => (
+            <CardSpotlightBorder client:load>
+              <Tecnologia class="size-8" />
+            </CardSpotlightBorder>
+          ))
+        }
+      </div>
+    ))}
   </div>
 </section>
 
 <style>
   .logo-slider {
     overflow: hidden;
-    padding: 30px 0 0 0;
+    padding: 20px 0 0 0;
     white-space: nowrap;
     position: relative;
+    display: inline-block;
     -webkit-mask: linear-gradient(
       90deg,
       transparent,
@@ -79,14 +82,30 @@ const tecnologias = [
     );
   }
 
-  .logo-slider:hover .logos-slide {
+  /* .logo-slider:hover .logos-slide {
     animation-play-state: paused;
-  }
+  } */
 
   .logos-slide {
     display: inline-block;
+    /* animation: 45s slide infinite linear; */
+  }
+
+  .slide-one {
     animation: 45s slide infinite linear;
   }
+
+  .slide-two {
+    animation: 45s slide-reverse infinite linear;
+  }
+
+  /* .logo-slider:nth-child(1) {
+    animation: 45s slide infinite linear;
+  }
+
+  .logo-slider:nth-child(2) {
+    animation: 45s slide-reverse infinite linear;
+  } */
 
   @keyframes slide {
     from {
@@ -95,6 +114,16 @@ const tecnologias = [
 
     to {
       transform: translateX(-100%);
+    }
+  }
+
+  @keyframes slide-reverse {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0%);
     }
   }
 
@@ -153,10 +182,12 @@ const tecnologias = [
 </style>
 
 <script is:inline>
-  var copy = document.querySelector(".logos-slide").cloneNode(true);
-  document.querySelector(".logo-slider").appendChild(copy);
-  const all = document.querySelectorAll(".card");
+  // var copy = document.querySelector(".logos-slide").cloneNode(true);
+  // document.querySelector(".logo-slider").appendChild(copy).appendChild(copy).appendChild(copy);
+  // document.querySelector(".logo-slider").appendChild(copy);
 
+  
+  const all = document.querySelectorAll(".card");
   window.addEventListener("mousemove", (ev) => {
     all.forEach((e) => {
       const blob = e.querySelector(".blob");
